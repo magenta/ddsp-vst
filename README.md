@@ -7,8 +7,8 @@
 VST/AU plugins and desktop applications built using the [JUCE](https://juce.com/) framework and [DDSP](https://github.com/magenta/ddsp) models.
 
 <div align="center">
-    <img width="500" alt="DDSP Effect" src="https://user-images.githubusercontent.com/7446124/167872854-ba8ddf52-e27f-4563-8d92-8e2da87573d4.png">
-    <img width="500" alt="DDSP Synth" src="https://user-images.githubusercontent.com/7446124/167882854-4d15a746-1d01-4634-877e-afe4f90710f2.png">
+    <img width="400" alt="DDSP Effect" src="https://user-images.githubusercontent.com/7446124/167872854-ba8ddf52-e27f-4563-8d92-8e2da87573d4.png">
+    <img width="400" alt="DDSP Synth" src="https://user-images.githubusercontent.com/7446124/167882854-4d15a746-1d01-4634-877e-afe4f90710f2.png">
 
 </div>
 
@@ -21,12 +21,16 @@ VST/AU plugins and desktop applications built using the [JUCE](https://juce.com/
 * [Download the latest plugin (OSX)](https://g.co/magenta/ddsp-vst-mac)
 * [Join our DDSP community!](https://discord.gg/eyzhzMJMx5)
 
-## Usage installtion (OSX)
+## Installation (OSX)
 
 1. Download the zipped binaries from the [link above](https://g.co/magenta/ddsp-vst-mac).
 2. Unzip and copy the contents to `/Library/Audio/Plug-Ins/Components`. There should be two plugins.
 3. Rescan for AudioUnit(s) in your respective DAW (verified on Ableton/FL Studio/Reaper).
 4. Use (and/or abuse) your instruments in real-time!
+
+## Using your plugin
+
+![Help](Explain_DDSP-01.png)
 
 ## Where's the code? ##
 
