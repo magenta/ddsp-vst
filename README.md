@@ -27,7 +27,7 @@ VST/AU plugins and desktop applications built using the [JUCE](https://juce.com/
 
 1. Download the zipped binaries from the [link above](https://g.co/magenta/ddsp-vst-mac).
 2. Unzip and copy the contents to `/Library/Audio/Plug-Ins/Components`. There should be two plugins.
-3. Rescan for AudioUnit(s) in your respective DAW (verified on Ableton/FL Studio/Reaper).
+3. Rescan for AudioUnit(s) in your respective DAW (verified on Ableton/Logic Pro/FL Studio/Reaper).
 4. Use (and/or abuse) your instruments in real-time!
 
 ### Using your plugin
