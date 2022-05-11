@@ -21,14 +21,16 @@ VST/AU plugins and desktop applications built using the [JUCE](https://juce.com/
 * [Download the latest plugin (OSX)](https://g.co/magenta/ddsp-vst-mac)
 * [Join our DDSP community!](https://discord.gg/eyzhzMJMx5)
 
-## Installation (OSX)
+# Get started!
+
+### Installation (OSX)
 
 1. Download the zipped binaries from the [link above](https://g.co/magenta/ddsp-vst-mac).
 2. Unzip and copy the contents to `/Library/Audio/Plug-Ins/Components`. There should be two plugins.
 3. Rescan for AudioUnit(s) in your respective DAW (verified on Ableton/FL Studio/Reaper).
 4. Use (and/or abuse) your instruments in real-time!
 
-## Using your plugin
+### Using your plugin
 
 ![Help](Explain_DDSP-01.png)
 
