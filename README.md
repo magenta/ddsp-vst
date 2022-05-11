@@ -34,6 +34,17 @@ VST/AU plugins and desktop applications built using the [JUCE](https://juce.com/
 
 ![Help](Explain_DDSP-01.png)
 
+### Training your own model
+<div align="center">
+<img width="1228" alt="image" src="https://user-images.githubusercontent.com/7446124/167896218-0245e8b5-4808-4080-83e6-2bafd3a39c51.png">
+</div>
+DDSP currently comes with _11_ embedded models. If you want to train and use your own model, follow these instructions:
+
+1. Procure a 10-20 minute file of a _monophonic_ (one note at a time) recording of an instrument you want to train. 
+2. Follow the directions in the [training colab](https://g.co/magenta/train-ddsp-vst) and download the trained model.
+4. Click the "Folder" icon within the plugin and drag your trained model into the same directory.
+5. Click the "Refresh" icon within the plugin for DDSP-VST to pick up your new model.
+
 ## Where's the code? ##
 
 _Soon™._
