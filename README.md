@@ -6,6 +6,11 @@
 
 VST/AU plugins and desktop applications built using the [JUCE](https://juce.com/) framework and [DDSP](https://github.com/magenta/ddsp) models.
 
+<div align="center">
+    <img width="500" alt="Screen Shot 2022-05-11 at 7 21 01 AM" src="https://user-images.githubusercontent.com/7446124/167872854-ba8ddf52-e27f-4563-8d92-8e2da87573d4.png">
+</div>
+
+
 
 ## Helpful Links
 
