@@ -9,12 +9,17 @@ VST/AU plugins and desktop applications built using the [JUCE](https://juce.com/
 
 ## Helpful Links
 
-* [Project Page](g.co/magenta/ddsp-vst)
-* [Train a new model](g.co/magenta/train-ddsp-vst)
-* [Share with a community](https://discord.gg/eyzhzMJMx5)
+* [Project Page](https://g.co/magenta/ddsp-vst)
+* [Train a new model](https://g.co/magenta/train-ddsp-vst)
+* [Download the latest plugin (OSX)](https://g.co/magenta/ddsp-vst-mac)
+* [Join our DDSP community!](https://discord.gg/eyzhzMJMx5)
 
 ## Where's the code? ##
 
-We're very excited about this being an open source project, getting feedback from the community, and helping to make this plugin better together! 
-We're hoping to get the code up as soon as we can, and have just a few loose ends to tie up to make it accessible and useful for everyone.
-Sorry for the inconvenience! In the meantime, please feel free to use this repo to share your experience using the plugin and to file bugs, issues, and feature requests while we get the code up and public. Thanks for your patience!
+_Soon™._
+
+Sorry for the inconvenience! We built this open-source project with the intention of it being a community effort: collecting feedback, sharing fun models and novel sounds, iterating on features, and joining forces to make this a better plugin _together_.  
+ 
+That's why we're taking a bit more time to make sure the code is in a good enough place to share with the rest of the community; we have just a few loose ends to tie up to make it accessible and useful for everyone.  
+
+In the meantime, you can download the codesigned binary from the links above. Please feel empowered join our Discord channel to share your experiences and to use this repo to file bugs/issues/feature requests while we get the code up and ready for public consumption. Thanks for your patience!
