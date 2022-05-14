@@ -6,6 +6,6 @@ If you manage to get your plugin to run succesfully, feel free to add a PR to th
 
 | Date    | Reporter    | Build #   | VST Deployment Target | OS + Version | Silicon | DAW + Version    | Successful Load | Error Message |
 |---------|-------------|-----------|-------------------|--------------|---------|------------------|-----------------|---------------|
-| 5/12/22 | wilzh40     | 1.0.0_RC4 | 10.11             | OSX 12.3.1   | M1      | FL Studio 20.9.0 | Y               | N/A           |
-| 5/12/22 | wilzh40     | 1.0.0_RC4 | 10.11             | OSX 12.3.1   | M1      | Ableton 11.1.1   | Y               | N/A           |
-| 5/12/22 | jesseengel  | 1.0.0_RC4 | 10.11             | OSX 12.3.1   | Intel   | Ableton 10.1.42  | Y               | N/A           |
+| 5/12/22 | wilzh40     | 1.0.0 | 10.11             | OSX 12.3.1   | M1      | FL Studio 20.9.0 | Y               | N/A           |
+| 5/12/22 | wilzh40     | 1.0.0 | 10.11             | OSX 12.3.1   | M1      | Ableton 11.1.1   | Y               | N/A           |
+| 5/12/22 | jesseengel  | 1.0.0 | 10.11             | OSX 12.3.1   | Intel   | Ableton 10.1.42  | Y               | N/A           |
