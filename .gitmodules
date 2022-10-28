@@ -1,0 +1,8 @@
+[submodule "externals/tensorflow"]
+	path = externals/tensorflow
+	url = git@github.com:tensorflow/tensorflow.git
+	shallow = true
+[submodule "externals/JUCE"]
+	path = externals/JUCE
+	url = git@github.com:juce-framework/JUCE.git
+	shallow = true

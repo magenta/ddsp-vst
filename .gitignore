@@ -1,0 +1,6 @@
+# osx
+.DS_Store
+
+# build files
+[Bb]uild*/
+models/ddsp/
