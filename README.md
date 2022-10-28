@@ -2,7 +2,7 @@
     <img src="https://storage.googleapis.com/ddsp/github_images/ddsp_logo.png" width="200px" alt="logo"></img>
 </div>
 
-# DDSP-VST #
+# [DDSP-VST](https://magenta.tensorflow.org/ddsp-vst) #
 
 VST3/AU plugins and desktop applications built using the [JUCE](https://juce.com/) framework and [DDSP](https://github.com/magenta/ddsp).
 
