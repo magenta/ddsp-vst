@@ -1,4 +1,4 @@
-name: Auto-formatter
+name: Format
 
 on:
   pull_request:
