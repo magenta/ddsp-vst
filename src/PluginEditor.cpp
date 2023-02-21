@@ -22,7 +22,7 @@ DDSPAudioProcessorEditor::DDSPAudioProcessorEditor (DDSPAudioProcessor& p)
 {
     addAndMakeVisible (contentComponent);
 
-    setSize (656, 672);
+           setSize (656, 672);
     setResizable (true, true);
     setResizeLimits (656, 624, 1200, 800);
 }
