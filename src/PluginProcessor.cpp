@@ -76,7 +76,7 @@ double DDSPAudioProcessor::getTailLengthSeconds() const { return 0.0; }
 
 int DDSPAudioProcessor::getNumPrograms()
 {
-    return 1; // NB: some hosts don't cope very well if you tell them there are 0 programs,
+                    return 1; // NB: some hosts don't cope very well if you tell them there are 0 programs,
     // so this should be at least 1, even if you're not really implementing programs.
 }
 
