@@ -31,7 +31,7 @@ jobs:
 
     - name: Run clang-format
       shell: bash
-      run: ./scripts/format_code.sh
+      run: ./scripts/format-code.sh
 
     - name: Commit & Push changes
       uses: actions-js/push@master
