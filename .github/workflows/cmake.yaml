@@ -37,7 +37,7 @@ jobs:
     - name: Configure CMake (Ninja)
       uses: seanmiddleditch/gha-setup-ninja@v3
       shell: bash
-      run: cmake -B build-ninja -S . -G Ninja
+    - run: cmake -B build-ninja -S . -G Ninja
 
     - name: Build CMake (Ninja)
       shell: bash
