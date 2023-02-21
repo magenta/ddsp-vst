@@ -25,6 +25,9 @@ jobs:
     - name: Get latest CMake
       uses: lukka/get-cmake@latest
 
+    - name: Get latest Ninja
+      uses: seanmiddleditch/gha-setup-ninja@v3
+
     - name: Checkout code
       uses: actions/checkout@v2
       with:
@@ -34,10 +37,9 @@ jobs:
       shell: bash
       run: ./repo-init.sh
 
-    - name: Configure CMake (Ninja)
-      uses: seanmiddleditch/gha-setup-ninja@v3
+    - name: Configure Build (Ninja)
       shell: bash
-    - run: cmake -B build-ninja -S . -G Ninja
+      run: cmake -B build-ninja -S . -G Ninja
 
     - name: Build CMake (Ninja)
       shell: bash
