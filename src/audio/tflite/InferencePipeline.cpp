@@ -35,21 +35,21 @@ InferencePipeline::~InferencePipeline() {}
 void InferencePipeline::prepareToPlay (double sr, int samplesPerBlock)
 {
     sampleRate = sr;
-    
+
     // Calculate the hopsize and framesize of the model at the
     // user's sample rate in order to load the holding input buffer.
-    
+
     // The frame size is the amount that is copied for downsampling and is
     // independent of the amount that is removed from the buffer after processing (hopsize).
     // Use ceil to ensure there are enough samples to correctly perform downsampling later.
     userFrameSize = static_cast<int> (ceil (sampleRate * kModelFrameSize / kModelSampleRate_Hz));
-    
+
     // If the hopsize of the model does not convert evenly to the user's sample rate, logic
     // must be written to handle this when advancing the pointer in the holding input buffer.
     // E.g. 44100 * 320 / 16000 = 882
     // As is, this works with standard sample rates of 44.1k, 48k, 88.2k, 96k, 176.4k and 192k.
     userHopSize = static_cast<int> (sampleRate * kModelHopSize / kModelSampleRate_Hz);
-    
+
     DBG ("User Sample Rate: " << sampleRate);
     DBG ("User Frame Size: " << userFrameSize);
     DBG ("User Hop Size: " << userHopSize);
