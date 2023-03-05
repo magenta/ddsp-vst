@@ -5,6 +5,7 @@ on:
     branches:
     - main
     - develop
+    - feature/ci
   pull_request:
     branches:
     - main
@@ -21,11 +22,11 @@ env:
   BUILD_DIR: build-ninja
   PROJECT_NAME: "DDSP_VST"
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  CMAKE_BUILD_PARALLEL_LEVEL: 3 # Use up to 3 cpus to build our project.
   EFFECT_VST3_PATH: "DDSPEffect_artefacts/VST3/DDSP\ Effect.vst3"
   SYNTH_VST3_PATH: "DDSPSynth_artefacts/VST3/DDSP\ Synth.vst3"
   EFFECT_AU_PATH: "DDSPEffect_artefacts/VST3/DDSP\ Effect.component"
   SYNTH_AU_PATH: "DDSPSynth_artefacts/VST3/DDSP\ Synth.component"
+  CMAKE_BUILD_PARALLEL_LEVEL: 3 # Use up to 3 cpus to build our project.
 
 jobs:
   build_and_test:
@@ -35,26 +36,17 @@ jobs:
       fail-fast: false # show all errors for each platform (vs. cancel jobs on error)
       matrix:
         # TODO: enable other OSes [ubuntu-latest, windows-2019, macOS-latest] 
-        plugin_name: 
         include:
-          - name: macOS
-            os: macos-12
-            pluginval-binary: pluginval.app/Contents/MacOS/pluginval
+        - name: macOS
+          os: macos-12
+          pluginval-binary: pluginval.app/Contents/MacOS/pluginval
           # - name: Linux
           #   os: ubuntu-22.04
           #   pluginval-binary: ./pluginval
           # - name: Windows
           #   os: windows-latest
           #   pluginval-binary: ./pluginval.exe
-
-    
     steps:
-    - name: Setup Environment Variables
-      shell: bash
-      run: |
-        VERSION=$(cat VERSION)
-        echo "PRODUCT_NAME=${{ env.PROJECT_NAME }}-$VERSION-${{ matrix.name }}" >> $GITHUB_ENV
-
     - name: Get latest CMake
       uses: lukka/get-cmake@latest
 
@@ -90,20 +82,20 @@ jobs:
         path: 'assets/*.wav'
         if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
 
-   - name: Download Pluginval
+    - name: Download Pluginval
       working-directory: ${{ env.BUILD_DIR }}
       shell: bash
       run: |
         curl -LO "https://github.com/Tracktion/pluginval/releases/download/v1.0.3/pluginval_${{ matrix.name }}.zip"
         7z x pluginval_${{ matrix.name }}.zip
 
-   - name: Run Pluginval (Synth)
+    - name: Run Pluginval (Synth)
       working-directory: ${{ env.BUILD_DIR }}
       shell: bash
       run: 
         ${{ matrix.pluginval-binary }} --strictness-level 10 --verbose --validate "${{ env.SYNTH_VST3_PATH }}"
 
-   - name: Run Pluginval (Effect)
+    - name: Run Pluginval (Effect)
       working-directory: ${{ env.BUILD_DIR }}
       shell: bash
       run: 
