@@ -4,7 +4,7 @@
 
 # [DDSP-VST](https://magenta.tensorflow.org/ddsp-vst) #
 
-![Build](https://github.com/magenta/ddsp-vst/actions/workflows/build.yaml/badge.svg)
+![Build](https://github.com/magenta/ddsp-vst/actions/workflows/cmake.yaml/badge.svg)
 ![Format](https://github.com/magenta/ddsp-vst/actions/workflows/format.yaml/badge.svg)
 
 VST3/AU plugins and desktop applications built using the [JUCE](https://juce.com/) framework and [DDSP](https://github.com/magenta/ddsp).
