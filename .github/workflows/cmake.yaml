@@ -47,4 +47,11 @@ jobs:
 
     - name: Run unit test
       shell: bash
-      run: cd build && ctest
+      run: cd build-ninja && ctest
+
+    - name: Upload unit test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: 'unit-test-artifacts'
+        path: 'assets/*.wav'
+        if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
