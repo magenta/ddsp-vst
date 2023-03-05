@@ -37,10 +37,14 @@ jobs:
       shell: bash
       run: ./repo-init.sh
 
-    - name: Configure Build (Ninja)
+    - name: Configure build (Ninja)
       shell: bash
       run: cmake -B build-ninja -S . -G Ninja
 
     - name: Build CMake (Ninja)
       shell: bash
       run: cmake --build build-ninja
+
+    - name: Run unit test
+      shell: bash
+      run: cd build && ctest
