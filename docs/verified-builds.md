@@ -11,3 +11,4 @@ If the plugin runs successfully on your machine/DAW, feel free to submit a PR wi
 | 10/12/22 | nikhilbhanu   | 1.1.0     | macOS 12.6   | M1 Pro      | Ableton 11.2       | Y               | N/A         |
 | 10/12/22 | nikhilbhanu   | 1.1.0     | Windows 10   | Intel       | Reaper 6.68        | Y               | N/A         |
 | 10/12/22 | nikhilbhanu   | 1.1.0     | Windows 10   | Intel       | Ableton 10.1.43    | Y               | N/A         |
+| 05/04/23 | stardust011   | 1.1.0     | Windows 11   | AMD         | Studio One 5.0.1   | Y               | N/A         |

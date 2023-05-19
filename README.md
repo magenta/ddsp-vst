@@ -39,7 +39,7 @@ VST3/AU plugins and desktop applications built using the [JUCE](https://juce.com
 
 1. Download the plugin binaries from [here](https://g.co/magenta/ddsp-vst-windows).
 2. Unzip and copy the two VST3 plugins (DDSP Effect and DDSP Synth) to `C:\Program Files\Common Files\VST3`
-3. Rescan for new plugins in your respective DAW (verified on Ableton//Reaper).
+3. Rescan for new plugins in your respective DAW (verified on Ableton//Reaper//Studio One 5).
 
 ## Usage ##
 Take a look at [this guide](docs/getting-started.md) on how to use the plugins!
