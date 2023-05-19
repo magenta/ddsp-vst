@@ -1,0 +1,102 @@
+name: Build 
+
+on:
+  push:
+    branches:
+    - main
+    - develop
+    - feature/ci
+  pull_request:
+    branches:
+    - main
+    - develop
+
+  workflow_dispatch:
+
+# When pushing new commits, cancel any running builds on that branch
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  BUILD_DIR: build-ninja
+  PROJECT_NAME: "DDSP_VST"
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  EFFECT_VST3_PATH: "DDSPEffect_artefacts/VST3/DDSP\ Effect.vst3"
+  SYNTH_VST3_PATH: "DDSPSynth_artefacts/VST3/DDSP\ Synth.vst3"
+  EFFECT_AU_PATH: "DDSPEffect_artefacts/VST3/DDSP\ Effect.component"
+  SYNTH_AU_PATH: "DDSPSynth_artefacts/VST3/DDSP\ Synth.component"
+  CMAKE_BUILD_PARALLEL_LEVEL: 3 # Use up to 3 cpus to build our project.
+
+jobs:
+  build_and_test:
+    name: Test plugin on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false # show all errors for each platform (vs. cancel jobs on error)
+      matrix:
+        # TODO: enable other OSes [ubuntu-latest, windows-2019, macOS-latest] 
+        include:
+        - name: macOS
+          os: macos-12
+          pluginval-binary: pluginval.app/Contents/MacOS/pluginval
+          # - name: Linux
+          #   os: ubuntu-22.04
+          #   pluginval-binary: ./pluginval
+          # - name: Windows
+          #   os: windows-latest
+          #   pluginval-binary: ./pluginval.exe
+    steps:
+    - name: Get latest CMake
+      uses: lukka/get-cmake@latest
+
+    - name: Get latest Ninja
+      uses: seanmiddleditch/gha-setup-ninja@v3
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    
+    - name: Init repo
+      shell: bash
+      run: ./repo-init.sh
+
+    - name: Configure build (Ninja)
+      shell: bash
+      run: cmake -B build-ninja -S . -G Ninja
+
+    - name: Build CMake (Ninja)
+      shell: bash
+      run: cmake --build build-ninja
+
+    - name: Run unit test
+      working-directory: ${{ env.BUILD_DIR }}
+      shell: bash
+      run: ctest --output-on-failure -j4
+
+    - name: Upload unit test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: 'unit-test-artifacts'
+        path: 'assets/*.wav'
+        if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
+
+    - name: Download Pluginval
+      working-directory: ${{ env.BUILD_DIR }}
+      shell: bash
+      run: |
+        curl -LO "https://github.com/Tracktion/pluginval/releases/download/v1.0.3/pluginval_${{ matrix.name }}.zip"
+        7z x pluginval_${{ matrix.name }}.zip
+
+    - name: Run Pluginval (Synth)
+      working-directory: ${{ env.BUILD_DIR }}
+      shell: bash
+      run: 
+        ${{ matrix.pluginval-binary }} --strictness-level 10 --verbose --validate "${{ env.SYNTH_VST3_PATH }}"
+
+    - name: Run Pluginval (Effect)
+      working-directory: ${{ env.BUILD_DIR }}
+      shell: bash
+      run: 
+        ${{ matrix.pluginval-binary }} --strictness-level 10 --verbose --validate "${{ env.EFFECT_VST3_PATH }}"
