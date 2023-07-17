@@ -11,3 +11,5 @@ If the plugin runs successfully on your machine/DAW, feel free to submit a PR wi
 | 10/12/22 | nikhilbhanu   | 1.1.0     | macOS 12.6   | M1 Pro      | Ableton 11.2       | Y               | N/A         |
 | 10/12/22 | nikhilbhanu   | 1.1.0     | Windows 10   | Intel       | Reaper 6.68        | Y               | N/A         |
 | 10/12/22 | nikhilbhanu   | 1.1.0     | Windows 10   | Intel       | Ableton 10.1.43    | Y               | N/A         |
+| 07/16/23 | dbyron10      | 1.1.0     | MacOS 13.4   | M1 Pro      | Logic Pro 10.7.8   | Y               | N/A         |
+| 07/16/23 | dbyron10      | 1.1.0     | MacOS 13.4   | M1 Pro      | Cubase 12          | Y               | N/A         |
